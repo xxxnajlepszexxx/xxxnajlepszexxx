@@ -1,0 +1,47 @@
+:root {
+  --color: #4696ff;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-sherif;
+  margin: 0;
+  padding: 0;
+  
+  background: #333333;
+  color: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-animation {
+  position: relative;
+  display: inline-block;
+  font-size: 5.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.loading-animation::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--color);
+  overflow: hidden;
+  width: 0%;
+  animation: loading 12s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  
+  100% {
+    width: 100%;
+  }
+}
